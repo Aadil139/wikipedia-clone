@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ingredients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f8b500, #e53935, #8e24aa);
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .food-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+        .food-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .food-item .description {
+            flex: 1;
+        }
+        .food-item h2 {
+            margin: 0;
+            color: #555;
+        }
+        .food-item p {
+            margin: 5px 0 0;
+            color: #777;
+        }
+        .food-item .recipe {
+            display: none;
+            margin-top: 10px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        function toggleRecipe(id) {
+            const recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ingredients</h1>
+
+        <div class="food-item" onclick="toggleRecipe('recipe-steak')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Steak_03_bg_041306.jpg" alt="Steak">
+            <div class="description">
+                <h2>Steak</h2>
+                <p>A delicious grilled steak, cooked to perfection.</p>
+                <div id="recipe-steak" class="recipe">
+                    <strong>Dish:</strong> Steak with Garlic Butter
+                    <br><strong>Ingredients:</strong> Steak, garlic, butter, herbs
+                    <br><strong>Instructions:</strong> Grill the steak and top with garlic butter.
+                </div>
+            </div>
+        </div>
+
+        <div class="food-item" onclick="toggleRecipe('recipe-pasta')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Fusilli_pasta_with_pesto_and_olives.jpg" alt="Pasta">
+            <div class="description">
+                <h2>Pasta</h2>
+                <p>Freshly made pasta with a variety of sauces to choose from.</p>
+                <div id="recipe-pasta" class="recipe">
+                    <strong>Dish:</strong> Pesto Pasta
+                    <br><strong>Ingredients:</strong> Pasta, pesto, parmesan, olive oil
+                    <br><strong>Instructions:</strong> Toss cooked pasta with pesto sauce and top with cheese.
+                </div>
+            </div>
+        </div>
+
+        <div class="food-item" onclick="toggleRecipe('recipe-fish')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Fish_dish.jpg" alt="Fish">
+            <div class="description">
+                <h2>Fish</h2>
+                <p>A savory fish dish with spices and herbs.</p>
+                <div id="recipe-fish" class="recipe">
+                    <strong>Dish:</strong> Lemon Herb Fish
+                    <br><strong>Ingredients:</strong> Fish, lemon, herbs, olive oil
+                    <br><strong>Instructions:</strong> Bake fish with lemon slices and herbs.
+                </div>
+            </div>
+        </div>
+
+        <div class="food-item" onclick="toggleRecipe('recipe-doro-wot')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Doro_wot_with_injera.jpg" alt="Doro Wot">
+            <div class="description">
+                <h2>Doro Wot</h2>
+                <p>A traditional Ethiopian chicken stew served with injera.</p>
+                <div id="recipe-doro-wot" class="recipe">
+                    <strong>Dish:</strong> Doro Wot
+                    <br><strong>Ingredients:</strong> Chicken, berbere spice, onions, butter
+                    <br><strong>Instructions:</strong> Simmer chicken in a rich berbere sauce.
+                </div>
+            </div>
+        </div>
+
+        <div class="food-item" onclick="toggleRecipe('recipe-kitfo')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Kitfo.jpg" alt="Kitfo">
+            <div class="description">
+                <h2>Kitfo</h2>
+                <p>A flavorful Ethiopian dish made from minced raw beef, seasoned with spices.</p>
+                <div id="recipe-kitfo" class="recipe">
+                    <strong>Dish:</strong> Kitfo with Injera
+                    <br><strong>Ingredients:</strong> Minced beef, mitmita, butter
+                    <br><strong>Instructions:</strong> Mix raw beef with spices and clarified butter.
+                </div>
+            </div>
+        </div>
+
+        <div class="food-item" onclick="toggleRecipe('recipe-chicken')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Roast_chicken.jpg" alt="Chicken">
+            <div class="description">
+                <h2>Chicken</h2>
+                <p>Succulent roasted chicken, perfectly seasoned.</p>
+                <div id="recipe-chicken" class="recipe">
+                    <strong>Dish:</strong> Roast Chicken
+                    <br><strong>Ingredients:</strong> Chicken, garlic, rosemary, olive oil
+                    <br><strong>Instructions:</strong> Roast chicken with herbs and garlic.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
